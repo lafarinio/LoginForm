@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { RootComponent } from './root.component';
 import { LoginModule } from '../modules/login/login.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { LoginModule } from '../modules/login/login.module';
   ],
   imports: [
     BrowserModule,
-    LoginModule
+    LoginModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [RootComponent]
