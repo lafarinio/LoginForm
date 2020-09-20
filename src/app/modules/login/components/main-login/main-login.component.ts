@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { LOGIN_FORM, LOGIN_FORM_NAMES } from '../../models/login-form.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './main-login.component.html',
   styleUrls: ['./main-login.component.css']
 })
-export class MainLoginComponent implements OnInit {
+export class MainLoginComponent implements OnInit, OnDestroy {
   form: FormGroup = LOGIN_FORM;
   formNames = LOGIN_FORM_NAMES;
 
@@ -35,6 +35,10 @@ export class MainLoginComponent implements OnInit {
 
   private login(): void {
     this.router.navigateByUrl('app/dashboard');
+  }
+
+  ngOnDestroy(): void {
+    this.form.reset();
   }
 
 }
