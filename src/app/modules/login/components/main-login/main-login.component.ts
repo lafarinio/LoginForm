@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { LOGIN_FORM, LOGIN_FORM_NAMES } from '../../models/login-form.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from '../modal/modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-login',
@@ -13,7 +14,8 @@ export class MainLoginComponent implements OnInit {
   form: FormGroup = LOGIN_FORM;
   formNames = LOGIN_FORM_NAMES;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -25,8 +27,14 @@ export class MainLoginComponent implements OnInit {
     });
   }
 
-  private handleResponse(response: boolean): void {
+  private handleResponse(resOk: boolean): void {
+    if (resOk) {
+      this.login();
+    }
+  }
 
+  private login(): void {
+    this.router.navigateByUrl('app/dashboard');
   }
 
 }
