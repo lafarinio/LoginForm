@@ -6,6 +6,7 @@ import { LoginModule } from '../modules/login/login.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RootRoutingModule } from './root-routing.module';
 import { StoreModule } from '@ngrx/store';
+import { DashboardModule } from '../modules/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { StoreModule } from '@ngrx/store';
   ],
   imports: [
     BrowserModule,
+    DashboardModule,
     LoginModule,
     NgbModule,
     StoreModule.forRoot({}),
