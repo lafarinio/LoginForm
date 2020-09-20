@@ -1,16 +1,18 @@
 <!-- https://getbootstrap.com/docs/4.0/components/forms/ -->
 
-<form>
+<form [formGroup]="form">
   <div class="login-container">
 
     <div class="row-cols-1">
       <div class="form-group">
         <label for="inputEmail">Email address</label>
-        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+               [formControlName]="formNames.LOGIN" placeholder="Enter email">
       </div>
       <div class="form-group">
         <label for="inputPassword">Password</label>
-        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password"
+                [formControlName]="formNames.PASSWORD">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
