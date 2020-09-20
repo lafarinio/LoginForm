@@ -1,2 +1,4 @@
 <h2>This is main page</h2>
-<button class="btn btn-primary" (click)="login()">Log in to application</button>
+<h4 *ngIf="isLogged">You are now logged!</h4>
+<button class="btn btn-primary" *ngIf="isLogged" (click)="logout()">Logout</button>
+<button class="btn btn-primary" *ngIf="!isLogged" (click)="login()">Login to application</button>

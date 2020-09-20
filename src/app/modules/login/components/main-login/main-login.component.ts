@@ -4,6 +4,9 @@ import { LOGIN_FORM, LOGIN_FORM_NAMES } from '../../models/login-form.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from '../modal/modal.component';
 import { Router } from '@angular/router';
+import { loginAction, logoutAction } from '../../store/login.actions';
+import { Store } from '@ngrx/store';
+import { RootState } from '../../../../root-component/store/root.state';
 
 @Component({
   selector: 'app-main-login',
@@ -15,6 +18,7 @@ export class MainLoginComponent implements OnInit, OnDestroy {
   formNames = LOGIN_FORM_NAMES;
 
   constructor(private modalService: NgbModal,
+              private store$: Store<RootState>,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -34,6 +38,7 @@ export class MainLoginComponent implements OnInit, OnDestroy {
   }
 
   private login(): void {
+    this.store$.dispatch(loginAction());
     this.router.navigateByUrl('app/dashboard');
   }
 
