@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { RootComponent } from './root.component';
 import { LoginModule } from '../modules/login/login.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RootRoutingModule } from './root-routing.module';
+import { CommonModule } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { RootRoutingModule } from './root-routing.module';
     BrowserModule,
     LoginModule,
     NgbModule,
-    RootRoutingModule,
+    StoreModule.forRoot({}),
   ],
   providers: [],
   bootstrap: [RootComponent]
