@@ -1,11 +1,24 @@
-<h2>Are you sure you want to log in?</h2>
+<!--https://ng-bootstrap.github.io/#/components/modal/-->
+<div class="modal-body">
+  <div class="modal-header">
+    <h3>Login to service?</h3>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 
-<div class="row">
-  <div class="col-sm">
-    <button (click)="emit(true)">Yes</button>
+  <div class="modal-body">
+    <p><strong>Are you sure you want to log in?</strong></p>
+    <p>Your current shopping cart will be associated with your account.
+      <span class="text-danger">This operation can overwrite your old shopping cart!</span>
+    </p>
+
   </div>
-  <div class="col-sm">
-    <button (click)="emit(false)">No</button>
+
+  <div class="modal-footer">
+    <button class="btn btn-primary"  (click)="emit(true)">Yes</button>
+    <button class="btn btn-secondary"  (click)="emit(false)">No</button>
   </div>
+
 </div>
 
