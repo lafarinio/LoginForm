@@ -10,4 +10,4 @@ import { StoreModule } from '@ngrx/store';
     StoreModule.forRoot({})
   ]
 })
-export class LoginStoreModule { }
+export class RootStoreModule { }
