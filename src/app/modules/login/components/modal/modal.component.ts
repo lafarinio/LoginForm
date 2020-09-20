@@ -16,6 +16,7 @@ export class ModalComponent implements OnInit {
 
   emit(buttonAnswer: boolean): void {
     this.answer.emit(buttonAnswer);
+    this.activeModal.close();
   }
 
 }

@@ -18,9 +18,15 @@ export class MainLoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  open(): void {
+  showModal(): void {
     const modalRef = this.modalService.open(ModalComponent);
-    modalRef.componentInstance.name = 'World';
+    modalRef.componentInstance.answer.subscribe(res => {
+      this.handleResponse(res);
+    });
+  }
+
+  private handleResponse(response: boolean): void {
+
   }
 
 }
