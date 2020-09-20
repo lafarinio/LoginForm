@@ -14,7 +14,7 @@
         <input type="password" class="form-control" id="inputPassword" placeholder="Password"
                 [formControlName]="formNames.PASSWORD">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
     </div>
 
   </div>
