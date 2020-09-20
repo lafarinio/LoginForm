@@ -38,6 +38,7 @@ export class MainLoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    // https://github.com/angular/angular/issues/4933
     this.form.reset();
   }
 
